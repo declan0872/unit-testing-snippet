@@ -6,8 +6,30 @@
 //  Copyright © 2019 Declan. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class Student: NSObject {
-
+class Student {
+    
+    private let firstName: String
+    private let lastName: String
+    
+    var friends: [Student] = []
+    
+    init(firstName: String, lastName: String){
+        self.firstName = firstName
+        self.lastName = lastName
+    }
+    
+    func addFriend(name: Student){
+        friends.append(name)
+    }
+    
+    func validFirstName() -> Bool {
+        return firstName.count > 3
+    }
+    
+    func validLastName() -> Bool {
+        return lastName.count > 3
+    }
+    
 }
